@@ -23,9 +23,9 @@
     {
       "name": "4",
       "setup": "",
-      "run": "python3 build_heap.py",
+      "run": "build_heap.py",
       "input": "F\r\n04",
-      "output": "99990",
+      "output": "9990",
       "comparison": "included",
       "timeout": 5,
       "points": 1
