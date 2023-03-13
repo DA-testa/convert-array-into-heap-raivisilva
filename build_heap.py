@@ -5,7 +5,7 @@ def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-
+    
 
     return swaps
 
@@ -15,14 +15,16 @@ def main():
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
-
+    izvele = input()
+    if izvele[0] == 'I':
+        n = int(input("Ievadiet skaitļu daudzumu: "))
 
     # input from keyboard
-    n = int(input())
     data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
+
 
     # calls function to assess the data 
     # and give back all swaps
