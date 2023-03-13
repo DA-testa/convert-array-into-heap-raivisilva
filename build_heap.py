@@ -1,11 +1,10 @@
 # python3
 
-
 def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    
+
 
     return swaps
 
@@ -15,17 +14,22 @@ def main():
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
+
     izvele = input()
+    
     if izvele[0] == 'I':
         n = int(input("Ievadiet skaitļu daudzumu: "))
-
     # input from keyboard
-    data = list(map(int, input().split()))
+        parents = list(map(int, input("Enter the parent nodes separated by spaces: ").split()))
 
     # checks if lenght of data is the same as the said lenght
+    elif izvele[0] == 'F':
+        faila_nosaukums = input("Enter the file name: ")
+        with open(F"./test/{faila_nosaukums}") as f:
+                n = int(f.readline())
+                parents = list(map(int, f.readline().split()))
+
     assert len(data) == n
-
-
     # calls function to assess the data 
     # and give back all swaps
     swaps = build_heap(data)
