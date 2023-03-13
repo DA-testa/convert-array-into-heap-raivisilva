@@ -5,11 +5,11 @@ def build_heap(data):
 # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     n = len(data)
-    for i in range(n, -1, -1):
+    for i in range(n//2, -1, -1):
          sort_heap(data, i, n, swaps)
     for i in range(n-1,0,-1):
          data[0], data[i] = data[i], data[0]
-         sort_heap(data, i, 0, swaps)
+         sort_heap(data, 0, 1, swaps)
     #print(data)
 
     return swaps
@@ -42,12 +42,12 @@ def main():
     if izvele[0] == 'I':
         n = int(input("Ievadiet skaitļu daudzumu: "))
 # input from keyboard
-        data = list(map(int, input("Ievadiet skaitļus : ").split()))
+        data = list(map(int, input("Ievadiet skaitļus ar atstarpēm: ").split()))
 
     # checks if lenght of data is the same as the said lenght
     elif izvele[0] == 'F':
         faila_nosaukums = input("Enter the file name: ")
-        with open(F"./tests/{faila_nosaukums}") as f:
+        with open(f"./tests/{faila_nosaukums}") as f:
                 n = int(f.readline())
                 data = list(map(int, f.readline().split()))
 
