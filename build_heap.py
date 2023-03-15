@@ -16,15 +16,15 @@ def build_heap(data):
 
 def sort_heap(data, i , n , swaps):
      left = 2*i+1
-     rigth = 2*i+2
+     right = 2*i+2
 
      if(left < n and data[left] > data[i]):
           lieli = left
      else:
           lieli = i
 
-     if(rigth < n and data[rigth] > data[lieli]):
-          lieli = rigth
+     if(right < n and data[right] > data[lieli]):
+          lieli = right
 
      if(lieli != i):
           data[i], data[lieli] = data[lieli], data[i]
