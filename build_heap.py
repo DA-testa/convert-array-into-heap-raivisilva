@@ -40,13 +40,13 @@ def main():
     izvele = input()
     
     if izvele[0] == 'I':
-        n = int(input("Ievadiet skaitļu daudzumu: "))
+        n = int(input(""))
 # input from keyboard
-        data = list(map(int, input("Ievadiet skaitļus ar atstarpēm: ").split()))
+        data = list(map(int, input("").split()))
 
     # checks if lenght of data is the same as the said lenght
     elif izvele[0] == 'F':
-        faila_nosaukums = input("Enter the file name: ")
+        faila_nosaukums = input("")
         with open(f"./tests/{faila_nosaukums}") as f:
                 n = int(f.readline())
                 data = list(map(int, f.readline().split()))
