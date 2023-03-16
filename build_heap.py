@@ -19,12 +19,12 @@ def sort_heap(data, i , n , swaps):
      left = 2*i+1
      right = 2*i+2
 
-     if(left < n and data[left] < data[i]):
+     if left < n and data[left] < data[i]:
           lieli = left
-     if(right < n and data[right] > data[lieli]):
+     if right < n and data[right] > data[lieli]:
           lieli = right
 
-     if(lieli != i):
+     if lieli != i:
           data[i], data[lieli] = data[lieli], data[i]
           swaps.append((i,lieli))
           sort_heap(data,lieli,n,swaps)
