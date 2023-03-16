@@ -5,7 +5,7 @@ def build_heap(data):
 # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     n = len(data)
-    for i in range(n//2, -1, -1):
+    for i in range((n-1)//2, -1, -1):
          sort_heap(data, i, n, swaps)
     #for i in range(n-1,0,-1):
          #data[0], data[i] = data[i], data[0]
@@ -21,12 +21,13 @@ def sort_heap(data, i , n , swaps):
 
      if left < n and data[left] < data[i]:
           lieli = left
-     if right < n and data[right] > data[lieli]:
+     if right < n and data[right] < data[lieli]:
           lieli = right
 
      if lieli != i:
-          data[i], data[lieli] = data[lieli], data[i]
           swaps.append((i,lieli))
+          data[i], data[lieli] = data[lieli], data[i]
+
           sort_heap(data,lieli,n,swaps)
 
 def main():
@@ -35,16 +36,15 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
-    izvele = input().strip()
+    izvele = input()
     
     if izvele == 'I':
-        n = int(input(""))
-# input from keyboard
-        data = list(map(int, input("").split()))
+        n = int(input())
+        data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
     elif izvele == 'F':
-        faila_nosaukums = input("").strip()
+        faila_nosaukums = input().strip()
         with open(f"./tests/{faila_nosaukums}") as f:
                 n = int(f.readline())
                 data = list(map(int, f.readline().split()))
@@ -56,7 +56,6 @@ def main():
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
-
 
     # output all swaps
     print(len(swaps))
