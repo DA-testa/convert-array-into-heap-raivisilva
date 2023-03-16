@@ -7,9 +7,9 @@ def build_heap(data):
     n = len(data)
     for i in range(n//2, -1, -1):
          sort_heap(data, i, n, swaps)
-    for i in range(n-1,0,-1):
-         data[0], data[i] = data[i], data[0]
-         sort_heap(data, 0, 1, swaps)
+    #for i in range(n-1,0,-1):
+         #data[0], data[i] = data[i], data[0]
+        # sort_heap(data, 0, 1, swaps)
     #print(data)
 
     return swaps
