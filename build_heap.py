@@ -35,16 +35,16 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
-    izvele = input()
+    izvele = input().strip()
     
-    if izvele[0] == 'I':
+    if izvele == 'I':
         n = int(input(""))
 # input from keyboard
         data = list(map(int, input("").split()))
 
     # checks if lenght of data is the same as the said lenght
-    elif izvele[0] == 'F':
-        faila_nosaukums = input("")
+    elif izvele == 'F':
+        faila_nosaukums = input("").strip()
         with open(f"./tests/{faila_nosaukums}") as f:
                 n = int(f.readline())
                 data = list(map(int, f.readline().split()))
