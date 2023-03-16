@@ -38,12 +38,13 @@ def main():
     # checks if lenght of data is the same as the said lenght
 
     elif izvele == 'F':
-        faila_nosaukums = input().strip()
+        faila_nosaukums = input()
         with open(f"./tests/{faila_nosaukums}") as f:
             n = int(f.readline())
             data = list(map(int, f.readline().split()))
 
     assert len(data) == n
+    
     swaps = build_heap(data)
 
     print(len(swaps))
