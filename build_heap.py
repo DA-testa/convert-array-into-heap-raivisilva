@@ -39,9 +39,10 @@ def main():
 
     elif izvele == 'F':
         faila_nosaukums = input()
-        with open(f"./tests/{faila_nosaukums}") as f:
+        with open("./tests/" + faila_nosaukums, mode='r') as f:
             n = int(f.readline())
             data = list(map(int, f.readline().split()))
+
 
     assert len(data) == n
 
