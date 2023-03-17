@@ -31,13 +31,13 @@ def main():
 
     izvele = input()
 
-    if "I" in izvele:
+    if izvele == 'I':
         n = int(input())
         data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
 
-    elif "F" in izvele:
+    elif izvele == 'F':
         faila_nosaukums = input()
         if 'a' in faila_nosaukums:
             return
