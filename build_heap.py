@@ -1,4 +1,4 @@
-# python3
+# python3 Raivis Ilva 13. grupa 221RDB403
 
 def build_heap(data):
     swaps = []
@@ -21,7 +21,6 @@ def sort_heap(data, i, n, swaps):
         lieli = right
 
     if lieli != i:
-
         data[i], data[lieli] = data[lieli], data[i]
         swaps.append((i, lieli))
         sort_heap(data, lieli, n, swaps)
@@ -50,9 +49,7 @@ def main():
         return
 
     assert len(data) == n
-
     swaps = build_heap(data)
-
 
     print(len(swaps))
     for i, j in swaps:
